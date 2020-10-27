@@ -4,5 +4,5 @@ import {Colors} from '_styles';
 
 export default function TextDark({text, size}) {
   console.log(Colors.PRIMARY);
-  return <Text style={{fontSize: size, color: '#868f96'}}>{text}</Text>;
+  return <Text style={{fontSize: size, color: '#808080'}}>{text}</Text>;
 }

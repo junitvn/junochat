@@ -1,6 +1,6 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import TextDark from '../../atoms/text/TextDark';
+import {TouchableOpacity} from 'react-native';
+import TextDark from '_atoms/text/TextDark';
 
 export default function ButtonLoginWith() {
   return (
@@ -11,9 +11,9 @@ export default function ButtonLoginWith() {
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 25
+        borderRadius: 25,
       }}>
-      <TextDark text="LOGIN WITH FACEBOOK" size={20} />
+      <TextDark text="LOGIN WITH FACEBOOK" size={17} />
     </TouchableOpacity>
   );
 }
