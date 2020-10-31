@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "889407671087",
+    "firebase_url": "https://soulmate-a3540.firebaseio.com",
+    "project_id": "soulmate-a3540",
+    "storage_bucket": "soulmate-a3540.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889407671087:android:4f209b274e7ed36cb02fda",
+        "android_client_info": {
+          "package_name": "com.junochat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889407671087-sqc8brea8q8hk4s8gb8tepopkrb9i7cn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.junochat",
+            "certificate_hash": "5b20b34f885ad4dde225606333a4ad4df7601ffb"
+          }
+        },
+        {
+          "client_id": "889407671087-divotdb3e8vc4cdq2q3uu2jpmvec09vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbzpevwHEAB9cbycHncF-XLL2KJ8tjAqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889407671087-divotdb3e8vc4cdq2q3uu2jpmvec09vm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
