@@ -35,7 +35,11 @@ export default function Login() {
         idToken,
         accessToken,
       );
-      await auth().signInWithCredential(credential);
+      await auth().signInWithCredential(credential).then(res => {
+        console.log(res.additionalUserInfo.isNewUser);
+        console.log(res.additionalUserInfo.profile); 
+        console.log('logged in ', res);
+      });
     } catch (error) {
       console.log('err', error);
     }
