@@ -1,12 +1,10 @@
 import {
   GoogleSignin,
-  GoogleSigninButton,
-  statusCodes,
 } from '@react-native-community/google-signin';
 import React, { useEffect, useState } from 'react';
 import { Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import ButtonLoginWith from '_molecules/buttons/ButtonLoginWith';
+import ButtonWithBackground from '_molecules/buttons/ButtonWithBackground';
 import { Colors } from '_styles';
 import styles from './login.styles';
 import auth from '@react-native-firebase/auth';
@@ -14,7 +12,7 @@ import auth from '@react-native-firebase/auth';
 export default function Login() {
 
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState({});
 
   useEffect(() => {
     GoogleSignin.configure({
@@ -23,7 +21,18 @@ export default function Login() {
         '889407671087-divotdb3e8vc4cdq2q3uu2jpmvec09vm.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
       offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
     });
-  }, []);
+    getCurrentUser();
+    console.log(userInfo);
+  }, [loggedIn]);
+
+  const getCurrentUser = async () => {
+    const currentUser = await GoogleSignin.getCurrentUser();
+    // console.log(currentUser.user);
+    if (currentUser != null) {
+      setUserInfo(currentUser.user);
+    }
+    // console.log(userInfo, " - ", loggedIn);
+  }
 
   const signIn = async () => {
     console.log('log in');
@@ -37,7 +46,7 @@ export default function Login() {
       );
       await auth().signInWithCredential(credential).then(res => {
         console.log(res.additionalUserInfo.isNewUser);
-        console.log(res.additionalUserInfo.profile); 
+        console.log(res.additionalUserInfo.profile);
         console.log('logged in ', res);
       });
     } catch (error) {
@@ -46,11 +55,13 @@ export default function Login() {
   }
 
   const signOut = async () => {
+    console.log("out");
     try {
       await GoogleSignin.revokeAccess();
       await GoogleSignin.signOut();
       setLoggedIn(false);
-      setUserInfo([]);
+      setUserInfo({});
+      console.log("sign out");
     } catch (error) {
       console.error(error);
     }
@@ -60,8 +71,10 @@ export default function Login() {
     <LinearGradient
       colors={[Colors.FIRST_GRADIENT, Colors.SECOND_GRADIENT]}
       style={styles.gradientContainer}>
+      {console.log(userInfo, loggedIn)}
       <Image source={require('_assets/images/logo.png')} style={styles.logo} />
-      <ButtonLoginWith onClick={signIn} />
+      <ButtonWithBackground onClick={signIn} title={loggedIn ? `Hi, ${userInfo.name}` : "LOGIN WITH GOOGLE"} />
+      <ButtonWithBackground onClick={signOut} title="Sign out" />
     </LinearGradient>
   );
 }
