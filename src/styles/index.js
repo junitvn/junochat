@@ -1,3 +1,4 @@
 import * as Colors from './colors';
+import * as Typos from './typography';
 
-export {Colors};
+export {Colors, Typos};
