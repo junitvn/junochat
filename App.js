@@ -1,8 +1,6 @@
 import React from 'react';
-import Login from './src/scenes/login/login';
+import { Root } from '_navigations';
 
 export default function App() {
-  return (
-   <Login />
-  );
+  return <Root />;
 }

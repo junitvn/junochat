@@ -9,8 +9,9 @@ import { Colors } from '_styles';
 import styles from './login.styles';
 import auth from '@react-native-firebase/auth';
 
-export default function Login() {
-
+const Login = (props) => {
+  const { navigation } = props;
+  console.log(navigation);
   const [loggedIn, setLoggedIn] = useState(false);
   const [userInfo, setUserInfo] = useState({});
 
@@ -22,7 +23,6 @@ export default function Login() {
       offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
     });
     getCurrentUser();
-    console.log(userInfo);
   }, [loggedIn]);
 
   const getCurrentUser = async () => {
@@ -30,6 +30,7 @@ export default function Login() {
     // console.log(currentUser.user);
     if (currentUser != null) {
       setUserInfo(currentUser.user);
+      navigation.navigate("Home");
     }
     // console.log(userInfo, " - ", loggedIn);
   }
@@ -78,3 +79,5 @@ export default function Login() {
     </LinearGradient>
   );
 }
+
+export default Login;
