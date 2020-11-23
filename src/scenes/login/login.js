@@ -30,7 +30,7 @@ const Login = (props) => {
     // console.log(currentUser.user);
     if (currentUser != null) {
       setUserInfo(currentUser.user);
-      navigation.navigate("Home");
+      navigation.navigate("TabNavigation");
     }
     // console.log(userInfo, " - ", loggedIn);
   }
