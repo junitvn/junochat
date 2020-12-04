@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text } from 'react-native';
+import { BigHead } from 'react-native-bigheads';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Header } from '_components';
 import { Colors } from '_styles';
 

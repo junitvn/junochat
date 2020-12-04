@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Login, Home, User, Chat } from '_scenes';
+import { Login, Home, User, Chat, Profile } from '_scenes';
 import { Colors } from '_styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -40,7 +40,7 @@ const TabNavigation = () => {
           <Ionicons name="chatbubbles" color={color} size={29} />
         ),
       }} />
-    <Tab.Screen name="User" component={User}
+    <Tab.Screen name="Profile" component={Profile}
       options={{
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="person" color={color} size={29} />
