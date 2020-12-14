@@ -1,3 +1,4 @@
 import Profile from './profile';
+import Picker from './picker';
 
-export { Profile };
+export { Profile, Picker };
