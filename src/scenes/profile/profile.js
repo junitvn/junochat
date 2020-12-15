@@ -14,7 +14,7 @@ const Profile = () => {
     const hairData = ['long', 'bun', 'short', 'pixie', 'balding', 'buzz', 'afro', 'bob', 'mohawk'];
     const onChangeClothing = clothingIndex => setClothingIndex(clothingIndex);
     const onChangeHair = index => setHairIndex(index);
-    return <View>
+    return <View >
         <BigHead
             accessory="shades"
             bgColor="blue"
@@ -36,7 +36,6 @@ const Profile = () => {
             skinTone="brown"
         />
         <Picker style={{ marginBottom: 8, }} data={clothingData} selected={clothingIndex} onChange={onChangeClothing} title="Clothing" />
-
         <Picker data={hairData} selected={hairIndex} onChange={onChangeHair} title="Hair" />
     </View>
 }
