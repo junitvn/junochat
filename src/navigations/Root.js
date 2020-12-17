@@ -16,6 +16,7 @@ const Root = () => {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
+        <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="TabNavigation" component={TabNavigation} />
       </Stack.Navigator>

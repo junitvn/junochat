@@ -1,16 +1,17 @@
-const { StyleSheet } = require("react-native");
+const {StyleSheet} = require('react-native');
 
 const styles = StyleSheet.create({
-  gradientContainer: {
+  container: {
     flex: 1,
+    backgroundColor: 'white',
+  },
+  avatarContainer: {
+    flex: 3,
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingBottom: '10%',
-    paddingTop: '30%'
   },
-  logo: {
-    width: '70%',
-    height: '15%'
-  }
-})
+  pickerContainer: {
+    flex: 7,
+  },
+});
 export default styles;
