@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Colors } from '_styles';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
 import _ from 'lodash';
 
 const Picker = props => {
@@ -27,17 +27,16 @@ const Picker = props => {
             <TouchableOpacity
                 onPress={() => onChange((selected + size - 1) % size)}
                 disabled={selected == 0}>
-                {console.log("selected: ", selected == 0)}
-                <AntDesign
-                    name="caretleft"
+                <Entypo
+                    name="chevron-left"
                     style={selected == 0 ? styles.iconInactive : styles.iconActive} />
             </TouchableOpacity>
             <Text style={styles.selectedText}>{data[selected]}</Text>
             <TouchableOpacity
                 onPress={() => onChange((selected + 1) % size)}
                 disabled={selected == size - 1}>
-                <AntDesign
-                    name="caretright"
+                <Entypo
+                    name="chevron-right"
                     style={selected != size - 1 ? styles.iconActive : styles.iconInactive} />
             </TouchableOpacity>
         </View>
@@ -65,7 +64,8 @@ const styles = StyleSheet.create({
         flex: 7,
         justifyContent: 'space-between',
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingHorizontal: 8
     },
     selectedText: {
         fontSize: 18
@@ -75,11 +75,11 @@ const styles = StyleSheet.create({
     },
     iconActive: {
         color: Colors.SECOND_GRADIENT,
-        fontSize: 22
+        fontSize: 25
     },
     iconInactive: {
         color: Colors.GRAY_MEDIUM,
-        fontSize: 22
+        fontSize: 25
     }
 })
 

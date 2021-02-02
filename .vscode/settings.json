@@ -3,7 +3,9 @@
         "caretleft",
         "caretright",
         "chatbubbles",
+        "entypo",
         "ionicons",
-        "mixins"
+        "mixins",
+        "turqoise"
     ]
 }

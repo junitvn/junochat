@@ -4,6 +4,7 @@ export const WHITE = '#FFFFFF';
 export const BLACK = '#000000';
 export const FIRST_GRADIENT = '#D6C3C5';
 export const SECOND_GRADIENT = '#F4565B';
+export const TRANSPARENT = 'rgba(0,0,0,0)'
 
 // ACTIONS
 export const SUCCESS = '#3adb76';

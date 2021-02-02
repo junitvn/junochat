@@ -9,9 +9,11 @@ const styles = StyleSheet.create({
     flex: 3,
     alignItems: 'center',
     justifyContent: 'space-between',
+    paddingBottom: 12
   },
   pickerContainer: {
     flex: 7,
+    paddingHorizontal: 8
   },
 });
 export default styles;
